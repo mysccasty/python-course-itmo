@@ -18,6 +18,7 @@ def unbounded_knapsack(items, capacity):
 
     return dp[int(capacity * scale)], items_selected[int(capacity * scale)]
 
+
 init_items = {
     "laptop": (3.0, 1500),
     "camera": (1.0, 800),
