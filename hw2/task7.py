@@ -5,18 +5,19 @@ def unbounded_knapsack(items, capacity):
         for weight, _ in items.values()
     )
     scale = 10**scale_degree
-    dp = [0] * (int(capacity * scale) + 1)
-    items_selected = [{} for _ in range(int(capacity * scale) + 1)]
+    capacity = int(capacity * scale)
+    dp = [0] * (capacity + 1)
+    items_selected = [{} for _ in range(capacity + 1)]
 
     for item, (weight, value) in items.items():
-        weight_int = int(weight * scale)
-        for w in range(weight_int, int(capacity * scale) + 1):
-            if dp[w] < dp[w - weight_int] + value:
-                dp[w] = dp[w - weight_int] + value
-                items_selected[w] = items_selected[w - weight_int].copy()
+        weight = int(weight * scale)
+        for w in range(weight, capacity + 1):
+            if dp[w] < dp[w - weight] + value:
+                dp[w] = dp[w - weight] + value
+                items_selected[w] = items_selected[w - weight].copy()
                 items_selected[w][item] = items_selected[w].get(item, 0) + 1
 
-    return dp[int(capacity * scale)], items_selected[int(capacity * scale)]
+    return dp[capacity], items_selected[capacity]
 
 
 init_items = {
