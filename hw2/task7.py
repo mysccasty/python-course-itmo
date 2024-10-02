@@ -1,5 +1,5 @@
 def unbounded_knapsack(items, capacity):
-    # Необходимо привести веса к целым, чтобы воспользоваться динамическим программированием,
+    # Необходимо привести веса к целым, чтобы воспользоваться динамическим программированием
     scale_degree = max(
         len(str(weight).split('.')[1]) if '.' in str(weight) else 0
         for weight, _ in items.values()
@@ -18,7 +18,7 @@ def unbounded_knapsack(items, capacity):
 
     return dp[int(capacity * scale)], items_selected[int(capacity * scale)]
 
-items = {
+init_items = {
     "laptop": (3.0, 1500),
     "camera": (1.0, 800),
     "phone": (1.0, 600),
@@ -28,11 +28,9 @@ items = {
     "wallet": (0.1, 100),
 }
 
-capacity = int(input("Введите размер рюкзака: "))
+init_capacity = int(input("Введите размер рюкзака: "))
 
-max_value, selected_items = unbounded_knapsack(items, capacity)
+max_value, selected_items = unbounded_knapsack(init_items, init_capacity)
 
 print(f"Максимальная ценность, которую можно украсть: {max_value}")
-print("Количество каждого предмета, который был украден:")
-for item, count in selected_items.items():
-    print(f"{item}: {count} шт.")
+print(f"Словарь с выбранными товарами:\n {selected_items}")
