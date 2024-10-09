@@ -1,10 +1,11 @@
 # task6
 
 def my_hash(string):
-    return sum(ord(c) for c in string) % 256
+    return int(''.join(str(ord(char)) for char in string)) % 256
 
 
-def add_to_table(table, string, index):
+def add_to_table(table, string):
+    index = my_hash(s)
     if string in table.get(index, []):
         print("Предупреждение! Строка уже в таблице.")
     else:
@@ -13,9 +14,12 @@ def add_to_table(table, string, index):
     return table
 
 
-def remove_from_table(table, string, index):
+def remove_from_table(table, string):
+    index = my_hash(s)
     if index in table and string in table[index]:
         table[index].remove(string)
+        if not table[index]:
+            del table[index]
     elif index not in table:
         print("Предупреждение! Индекса нет в таблице.")
     elif string not in table[index]:
@@ -23,7 +27,11 @@ def remove_from_table(table, string, index):
     return table
 
 
-def search_in_table(table, string, index):
+def search_in_table(table, string):
+    index = my_hash(s)
+    hash_list = table.get(index, [])
+    if string in hash_list:
+        return {"Ключ": index, "Индекс": hash_list.index(string)}
     return string in table.get(index, [])
 
 
@@ -33,16 +41,13 @@ while True:
     choice = input("Выберите действие: ")
     if choice == "1":
         s = input("Введите строку: ")
-        hash_index = my_hash(s)
-        add_to_table(hash_table, s, hash_index)
+        print(add_to_table(hash_table, s))
     elif choice == "2":
         s = input("Введите строку для удаления: ")
-        hash_index = my_hash(s)
-        hash_table = remove_from_table(hash_table, s, hash_index)
+        print(remove_from_table(hash_table, s))
     elif choice == "3":
         s = input("Введите строку для поиска: ")
-        hash_index = my_hash(s)
-        print(search_in_table(hash_table, s, hash_index))
+        print(search_in_table(hash_table, s))
     elif choice == "4":
         print(hash_table)
     elif choice == "5":
