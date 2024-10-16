@@ -6,7 +6,7 @@ def generate_password(length):
     if length < 1:
         raise ValueError("Длина пароля должна быть положительным целым числом.")
 
-    chars = string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation
+    chars = string.ascii_letters + string.digits + string.punctuation
     password = ''.join(random.choice(chars) for _ in range(length))
 
     return password
