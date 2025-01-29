@@ -1,0 +1,50 @@
+K-means Results:
+Adjusted Rand Index (ARI): 0.432804702527474
+Silhouette Score: 0.4798814508199817
+Homogeneity Score: 0.534661805863406
+V-measure Score: 0.5895674488004072
+Fowlkes-Mallows Index (FMI): 0.6640227694665429
+------------------------------------------------------------
+Agglomerative Clustering Results:
+Adjusted Rand Index (ARI): 0.6153229932145449
+Silhouette Score: 0.4466890410285909
+Homogeneity Score: 0.6578818079976051
+V-measure Score: 0.6754701853436886
+Fowlkes-Mallows Index (FMI): 0.7497821129788488
+------------------------------------------------------------
+Spectral Clustering Results:
+Adjusted Rand Index (ARI): 0.6451422031981431
+Silhouette Score: 0.46297611543567124
+Homogeneity Score: 0.682361654869134
+V-measure Score: 0.6895147833731529
+Fowlkes-Mallows Index (FMI): 0.7646565316363984
+------------------------------------------------------------
+DBSCAN Results:
+Adjusted Rand Index (ARI): 0.4420986685885924
+Silhouette Score: 0.3565164814270073
+Homogeneity Score: 0.5005010857048665
+V-measure Score: 0.5114298559522713
+Fowlkes-Mallows Index (FMI): 0.6348551002879977
+------------------------------------------------------------
+Birch Results:
+Adjusted Rand Index (ARI): 0.6614133258247837
+Silhouette Score: 0.4535501305989079
+Homogeneity Score: 0.7139756763229047
+V-measure Score: 0.7330637153269233
+Fowlkes-Mallows Index (FMI): 0.7799383547177712
+------------------------------------------------------------
+Mean Shift Results:
+Adjusted Rand Index (ARI): 0.5681159420289855
+Silhouette Score: 0.5817500491982808
+Homogeneity Score: 0.5793801642856945
+V-measure Score: 0.7336804366512104
+Fowlkes-Mallows Index (FMI): 0.7714542762891773
+------------------------------------------------------------
+Лучшие параметры: {'branching_factor': 25, 'n_clusters': 3, 'threshold': 0.1}
+Birch Results после настройки:
+Adjusted Rand Index (ARI): 0.6834667916461372
+Silhouette Score: 0.45204023087090944
+Homogeneity Score: 0.7125944379110437
+V-measure Score: 0.724702152156385
+Fowlkes-Mallows Index (FMI): 0.7917974403822062
+------------------------------------------------------------
